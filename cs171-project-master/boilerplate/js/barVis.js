@@ -29,7 +29,7 @@ class BarVis {
 
         // add title
         vis.svg.append('g')
-            .attr('class', 'title bar-title')
+            .attr('class', 'title geo-text')
             .append('text')
             .text('Top 10 States with highest per-student Funding')
             .attr('transform', `translate(${vis.width / 2}, 10)`)
@@ -135,8 +135,16 @@ class BarVis {
 
         vis.svg.select(".y-axis")
             .call(vis.yAxis)
-            .selectAll("text")
         // .text(d => )
+
+        vis.svg.append("text")
+            // .attr("x", 0)
+            .attr("text-anchor", "middle")
+            // .attr("y", vis.height/2)
+            .attr('transform', `translate (${-vis.margin.left+10}, ${vis.height/2}) rotate(270)`)
+            .attr("font-size", "small")
+            .text("Per-student Funding ($)")
+
     }
 }
 

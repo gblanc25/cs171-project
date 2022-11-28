@@ -68,16 +68,16 @@ class SankeyChart {
 
         vis.sankeyData = {"nodes":[], "links":[]};
         vis.sankeyData.nodes = [
-            {"node": 0, "name": 'top 20 %'},
+            {"node": 0, "name": 'top 20 % of states'},
             {"node": 1, "name": '20-40 %'},
             {"node": 2, "name": '40-60 %'},
             {"node": 3, "name": '60-80 %'},
-            {"node": 4, "name": 'bottom 20 %'},
-            {"node": 5, "name": 'top 20 %'},
+            {"node": 4, "name": 'bottom 20 % of states'},
+            {"node": 5, "name": 'top 20 % of states'},
             {"node": 6, "name": '20-40 %'},
             {"node": 7, "name": '40-60 %'},
             {"node": 8, "name": '60-80 %'},
-            {"node": 9, "name": 'bottom 20 %'}]
+            {"node": 9, "name": 'bottom 20 % of states'}]
 
 
         for (var i =0; i<50; i++){

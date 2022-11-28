@@ -62,7 +62,7 @@ class GeoVis2 {
 
         vis.legend = vis.svg.append("g")
             .attr('class', 'legend')
-            .attr('transform', `translate(${vis.width * 2.8 / 4}, ${vis.height - 25})`)
+            .attr('transform', `translate(${vis.width * 2.8 / 5}, ${vis.height - 25})`)
 
         vis.legendScale = d3.scaleLinear()
             .range(["#FFFFFF", "#023020"])
@@ -80,13 +80,13 @@ class GeoVis2 {
 
         vis.legendAxisGroup = vis.svg.append("g")
             .attr("class", "legend-axis")
-            .attr('transform', `translate(${vis.width * 2.8 / 4}, ${vis.height - 20})`)
+            .attr('transform', `translate(${vis.width * 2.8 / 5}, ${vis.height - 25})`)
 
         vis.minText = vis.legendAxisGroup
             .append('text')
             .attr('x', 0)
             .attr('y', 30)
-            .attr('class', 'legend-text')
+            .attr('class', 'geo-text')
             .text('0')
             .style('text-anchor', 'middle');
 
@@ -95,7 +95,7 @@ class GeoVis2 {
             .attr('class', 'text')
             .attr('x', 150)
             .attr('y', 30)
-            .attr('class', 'legend-text')
+            .attr('class', 'geo-text')
             .style('text-anchor', 'middle');
 
 
@@ -150,7 +150,7 @@ class GeoVis2 {
                 d3.select(this)
                     .attr('stroke-width', '2px')
                     .attr('stroke', 'black')
-                    .style('fill', 'red');
+                    .style('fill', 'yellow');
 
                 let fundingTotal = "";
                 let fundingFederal = "";
@@ -211,8 +211,8 @@ class GeoVis2 {
 
 
         //fix legend formatting
-        vis.minText.text(formatAbbreviation(d3.min(vis.fundingData, d => +d[selectedCategory2])))
-        vis.maxText.text(formatAbbreviation(d3.max(vis.fundingData, d => +d[selectedCategory2])))
+        vis.minText.text("$" + formatAbbreviation(d3.min(vis.fundingData, d => +d[selectedCategory2])))
+        vis.maxText.text("$" + formatAbbreviation(d3.max(vis.fundingData, d => +d[selectedCategory2])))
 
 
     }

@@ -46,11 +46,11 @@ class Bricks {
 
         // Set dynamic width, height, and svg
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width;
-        vis.height = 0.5 * vis.width;
+        vis.height = 0.45 * vis.width;
 
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
             .attr("width", vis.width)
-            .attr("height", 600)
+            .attr("height", vis.height)
             .append("g")
             .attr("transform", "translate(" + 0 + "," + vis.margin.top + ")");
 
@@ -66,13 +66,13 @@ class Bricks {
                 return (vis.margin.left / 2 + ((vis.width - 1.1 * vis.margin.left - vis.width / 15) / 9) * (i % 10));
             })
             .attr('y', function (d, i) {
-                return Math.floor(i / 10) * 60;
+                return Math.floor(i / 10) * 20;
             })
             .transition()
             .delay(function(d,i){ return 50*i; })
             .duration(50)
             .attr('width', vis.width / 15)
-            .attr('height', 30)
+            .attr('height', 15)
             .attr('stroke', 'black')
             .attr('fill', 'transparent')
 

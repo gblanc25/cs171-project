@@ -21,8 +21,8 @@ body {
 }
 
 .footer {
-    color: gray;
-    font-size: x-small;
+    color: white;
+    font-size: small;
     text-align: center;
 }
 
@@ -54,13 +54,16 @@ body {
     font-size: 14px;
 }
 
-.button{
+.button, .button2{
     float: left;
-    border: none;
+    border: black;
     padding: 10px 10px;
     width: 10%;
     align-content: center;
-    background-color: white;
+    background-color: lightgray;
+    font-family: Century Gothic, sans-serif;
+    font-size: 12px;
+
 }
 
 /*.button:hover {*/
@@ -68,14 +71,6 @@ body {
 /*    color: white;*/
 /*}*/
 
-.button2{
-    float: left;
-    border: none;
-    padding: 10px 10px;
-    width: 10%;
-    align-content: center;
-    background-color: white;
-}
 
 /*.button:hover {*/
 /*    background-color: #4CAF50; !* Green *!*/
@@ -83,19 +78,19 @@ body {
 /*}*/
 
 #funding-geo {
-    width: 50vw;
-    height: 40vw;
+    width: 40vw;
+    height: 30vw;
 }
 
 
 #funding-geo-2 {
-    width: 50vw;
-    height: 40vw;
+    width: 40vw;
+    height: 30vw;
 }
 
 
 #barDiv {
-    width: 50vw;
+    width: 40vw;
     height: 25vw;
 }
 
@@ -147,7 +142,8 @@ body {
 }
 
 #factors {
-    height: 75vh;
+    height: 60vh;
+
 }
 
 #col2{
@@ -157,5 +153,49 @@ body {
 
 .sankey-title{
     font-weight: bold;
+
 }
 
+* {
+    padding: 0;
+    margin: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+p {
+    /*color: #fff;*/
+    font-size: 12px;
+    font-family: Century Gothic, sans-serif;
+}
+
+.story-title{
+    font-family: 'Callie Chalk Font', sans-serif;
+    color: #fff;
+    font-size: 4vw;
+
+}
+
+
+.divider-text{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.geo-text{
+    font-size: 12px;
+    font-family: Century Gothic, sans-serif;
+
+}
+
+span{
+    font-family: Century Gothic, sans-serif;
+
+}
+
+#title-small{
+    font-size: 2.5vw;
+}
+
+th, td{
+    font-family: Century Gothic, sans-serif;
+}

@@ -168,9 +168,7 @@ class OutcomeScatter {
         vis.svg.selectAll('.circle_label')
             .style("display", "none")
 
-        console.log(d3.max(this.displayData, function (d) {
-            return d["funding"];
-        }))
+
 
         // Update domains
         vis.x

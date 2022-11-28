@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 	<head>
 		<meta charset="utf-8">
 		<meta name="description" content="">
@@ -9,237 +9,309 @@
 		<!-- Load CSS libraries -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css" integrity="sha512-hGBKkjAVJUXoImyDezOKpzuY4LS1eTvJ4HTC/pbxn47x5zNzGA1vi3vFQhhOehWLTNHdn+2Yqh/IRNPw/8JF/A==" crossorigin="anonymous" />
+		<link href="https://fonts.cdnfonts.com/css/callie-chalk-font" rel="stylesheet">
+
 
 		<!-- GOOGLE FONTS -->
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic,300italic' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
-		<div class="container">
-			<div class="row justify-content-center" id="title">Higher Education and The Case For Public School Funding</div>
-			<div class="row story" id="story-intro">
-				Let's explore at Elementary / Secondary school funding in the United States and its impact on higher education!
-				First, let's look at how school funding differs between the states.
-				Hover over the states for more info. Use the tabs to color the map by different funding types.
-				<br>
-			</div>
-			<div class="row">
-				<button onclick="buttonClick(this)" class="button" id="total">Total</button>
-				<button onclick="buttonClick(this)" class="button" id="federal">Federal</button>
-				<button onclick="buttonClick(this)" class="button" id="state">State</button>
-				<button onclick="buttonClick(this)" class="button" id="local">Local</button>
-			</div>
-			<div class="row justify-content-center">
-				<div class="row justify-content-center graph" id="funding-geo"></div>
-			</div>
-			<div class="source">Data from U.S. Census Bureau.</div>
 
-			<div class="row story" id="story-2">
-				At a glance, it looks like states such as California, Texas, and New York have the most funding.
-				This would make sense, given that those are some of the more populous US states.
-				To look at the differential effects of funding across states, it may be more informative to look at funding per student.
-				Hover over the states for more info. Use the tabs to color the map by different funding types.
+	<div id="fullpage">
+		<div class="vertical-scrolling">
+			<div class="row justify-content-center" id="title">
+				<p class="story-title" style="color:yellow"> Higher Education </p>
+				<p class="story-title" id="title-small"> and the case for</p>
+				<p class="story-title" style="color:yellow"> Public School Funding </p>
+				<p class="divider-text"> <br> Yuen Ting Chow & Gabe LeBlanc </p>
+
 			</div>
-			<div class="row">
-				<button onclick="buttonClick(this)" class="button2" id="total2">Total</button>
-				<button onclick="buttonClick(this)" class="button2" id="federal2">Federal</button>
-				<button onclick="buttonClick(this)" class="button2" id="state2">State</button>
-				<button onclick="buttonClick(this)" class="button2" id="local2">Local</button>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-7">
-					<div class="row">
-						<div id="funding-geo-2"></div>
-					</div>
+		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="row story" id="story-intro">
+					<p> Let's explore at elementary school funding in the United States and its impact on higher education!
+					First, let's look at how school funding differs between the states.
+						<br><i>Hover over the states for more info. Use the tabs to color the map by different funding types. </i>
+						<br>
+					</p>
 				</div>
-				<div class="col-5">
-					<div class="row">
-						<div id="barDiv"></div>
-					</div>
+				<div class="row">
+					<button onclick="buttonClick(this)" class="button" id="total">Total</button>
+					<button onclick="buttonClick(this)" class="button" id="federal">Federal</button>
+					<button onclick="buttonClick(this)" class="button" id="state">State</button>
+					<button onclick="buttonClick(this)" class="button" id="local">Local</button>
 				</div>
+				<div class="row justify-content-center">
+					<div class="row justify-content-center graph" id="funding-geo"></div>
+				</div>
+				<div class="source">Data from U.S. Census Bureau.</div>
+				<p><br> At a glance, it looks like states such as <b>California</b>, <b>Texas</b>, and <b>New York </b> have the most funding.
+					This would make sense, given that those are some of the <b>more populous US states</b>.
+				</p>
 			</div>
-			<div class="source">Data from U.S. Census Bureau.</div>
-
-
-
-			<div class="row story" id="story-outcomes">But do states with higher per-student funding have better educational outcomes? And if so, which type of funding is most impactful?</div>
-			<div class="row story">
-				<p style="border-left: solid" id="outcome_1"><b>First, take a look at the graph below of total funding (in white) vs Bachelor's Degree achievement.</b> We see a clear upward trend, so funding appears to correlate with eventual outcomes. Let's investigate what type of funding contributes most to that trend!</p>
-				<p style="border-left: solid" id="outcome_2" hidden><b>Compare the trends of federal funding per student (teal), state funding per student (tan), and local funding per student (purple).</b> Only the local funding displays a positive correlation, suggesting that pursuing a Bachelor's degree is influenced most by funding at the local level.</p>
-				<p style="border-left: solid" id="outcome_3" hidden><b>Here's the full chart. Use the checkboxes to explore trends in funding data on your own.</b></p>
-			</div>
-			<button onclick="advance()" type="button" id="outcome_next" class="btn btn-outline-primary" style="margin: 1%">Next (1/3)</button>
-			<button onclick="replay()" type="button" id="outcome_replay" class="btn btn-outline-secondary" style="margin: 1%" hidden>Replay</button>
-			<div class="row" id="outcome_checks" style="margin-left: 5%; margin-right: 5%; margin-top: 2%" hidden>
-				<div style="text-align: center; background-color: white; border: 1px dotted">
-					<input onclick="outcomes.wrangleData()" type="checkbox" id="federal_check" name="federal" style="accent-color: #58776c; outline: black">
-					<label for="federal" style="padding-right: 5%">Federal Funding Per Student</label>
-					<input onclick="outcomes.wrangleData()" type="checkbox" id="state_check" name="state" style="accent-color: darkred">
-					<label for="state" style="padding-right: 5%">State Funding Per Student</label>
-					<input onclick="outcomes.wrangleData()" type="checkbox" id="local_check" name="local" style="accent-color: #77C3EC">
-					<label for="local" style="padding-right: 5%">Local Funding Per Student</label>
-					<input onclick="outcomes.wrangleData()" type="checkbox" id="total_check" name="total" checked style="accent-color: tan; border-radius: 50%; border: 1px solid #ddd;">
-					<label for="total">Total Funding Per Student</label>
+		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="row story divider">
+					<p class="divider-text"> To look at the differential effects of funding across states, it may be more informative to look at <span style="color:yellow;"> funding per student</span>.
+					</p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-1" style="display: flex;
-					 align-items: center;">
-					<button hidden onclick="goback()" type="button" id="back_button" class="btn btn-secondary" style="margin-left: auto;
-margin-right: 0;"><<</button>
-				</div>
-				<div class="col-10 justify-content-center graph" id="outcomes"></div>
-				<div class="col-1 justify-content-right" style="display: flex;
-					 align-items: center; horiz-align: right">
-					<button hidden onclick="progress()" type="button" id="forward_button" class="btn btn-secondary" style="margin-left: 0;
-							margin-right: auto;">>></button>
-				</div>
-			<div class="source">Data from U.S. Census Bureau.</div>
-			<div class="row story" id="story-states">
-				<p>These trends show that <b>increasing funding at the local level</b> may be an important way to improve educational outcomes in your local district, especially as schools can invest in the teaching staff and support resources best fit for their students' success.
-					But of course, each district is different, and will need unique solutions to close educational gaps. So how do districts in your state 'stack' up?
-					<br><br><i>Click on individual states using the map on the right to see each state's distribution of educational achievement for those 18-24. One brick is one percent.</i></div>
-				<!--https://creazilla.com/nodes/25411-school-building-clipart-->
-			<div class="row">
-				<div class="col-4">
-					<div>
-						<button type="button" class="btn btn-lg btn-secondary" style="display: inline" data-bs-toggle="modal" data-bs-target="#exampleModal1" id="select-state1">
-							Select State
-						</button>
-					</div>
+		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
 
-					<!-- Modal -->
-					<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel1">Choose a State!</h5>
-									<button type="button" class="btn-close" id="close_button1" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<h7 class="modal-header">Darker Color = More Funding Per Student</h7>
-								<div class="modal-body" id="brick-selector1">
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-								</div>
-							</div>
+				<div class="row story" id="story-2">
+					<p> <i>Hover over the states for more info. Use the tabs to color the map by different funding types. </i>
+					</p>
+				</div>
+				<div class="row">
+					<button onclick="buttonClick(this)" class="button2" id="total2">Total</button>
+					<button onclick="buttonClick(this)" class="button2" id="federal2">Federal</button>
+					<button onclick="buttonClick(this)" class="button2" id="state2">State</button>
+					<button onclick="buttonClick(this)" class="button2" id="local2">Local</button>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-7">
+						<div class="row">
+							<div id="funding-geo-2"></div>
 						</div>
 					</div>
-					<div class="brick-subtitle" id="brick-subtitle1">School Funding: </div>
-					<br>
-					<div class="row">
-						<div class="col-6">
-							<p id='stat1a' style="font-weight: bold; color: tan">Some High School: </p>
-							<p id='stat1b' style="font-weight: bold; color: #58776c">High School Grad: </p>
+					<div class="col-5">
+						<div class="row">
+							<div id="barDiv"></div>
 						</div>
-						<div class="col-6">
-							<p id='stat1c' style="font-weight: bold; color: darkred">Some College:</p>
-							<p id='stat1d' style="font-weight: bold; color: gray">Bachelor's:</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-4" style="position: relative">
-					<img class="text-center" style="width: 30%; position:absolute; bottom:0; margin-left: auto; margin-right: auto; left: 0; right: 0" src="img/clock.png" id="clock">
-				</div>
-				<div class="col-4" style="text-align: right">
-					<!-- Button trigger modal -->
-					<div>
-						<button type="button" class="btn btn-lg btn-secondary" style="display: inline" data-bs-toggle="modal" data-bs-target="#exampleModal2" id="select-state2">
-							Select State
-						</button>
-					</div>
-
-					<!-- Modal -->
-					<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel2">Choose a State!</h5>
-									<button type="button" class="btn-close" id="close_button2" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<h7 class="modal-header">Darker Color = More Funding Per Student</h7>
-								<div class="modal-body" id="brick-selector2">
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="brick-subtitle" id="brick-subtitle2">School Funding: </div>
-					<br>
-					<div class="row">
-						<div class="col-6">
-							<p id='stat2a' style="font-weight: bold; color: darkred">Some College:</p>
-							<p id='stat2b' style="font-weight: bold; color: gray">Bachelor's:</p>
-						</div>
-						<div class="col-6">
-							<p id='stat2c' style="font-weight: bold; color: tan">Some High School: </p>
-							<p id='stat2d' style="font-weight: bold; color: #58776c">High School Grad: </p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-6" id="bricks-1" style="border-right: solid gray; padding: 0"></div>
-				<div class="col-6" id="bricks-2" style="border-left: solid gray; padding: 0"></div>
-			</div>
-			<div class="source">Data from U.S. Census Bureau.</div>
-			<br>
-			<div class="row" id="story-factors">
-				<p>Compare two states like Massachusetts (high funding) and Idaho (low funding), and there are huge gaps in college degree attainment, as expected. But then compare Pennsylvania (high funding) and Colorado (low funding), and the distribution looks identical. So, <b>funding can't be the only factor at play.</b></p>
-				<br>
-				<p>Below, we explore another contributing factor: the socioeconomic makeup of each state, which likely bolsters or inhibits the pursuit of higher education.</p>
-				<br>
-				<p><i>Hover over the curved lines on the chart below to see details about each state.</i></p>
-			</div>
-			<div class="row">
-				<div class="col-6" id="col1">
-					<div class="row" id="factors"></div>
-				</div>
-				<div class="col-6" id="col2">
-					<img src="img/states/Alabama-01.png" width="250" height="250" id="image">
-					<h2 id="state-id"></h2>
-					<div class="container w-75">
-
-						<!--						TABLE OF DATA GOES HERE-->
-						<table class="table">
-							<tbody>
-							<tr>
-								<th scope="row">Population 18-24 with Bachelor's degree or higher</th>
-								<td id="outcome-row"></td>
-							</tr>
-							<tr>
-								<th scope="row">Median Household Income</th>
-								<td id="income-row"></td>
-							</tr>
-							</tbody>
-						</table>
 					</div>
 				</div>
 				<div class="source">Data from U.S. Census Bureau.</div>
+				<p><br> Overall, it looks like states in the <b>Northeast</b> have the most per-student funding.</p>
 			</div>
-			<div class="row story" id="conclusion">
-				<p> Although there is some movement between the income and educational attainment brackets, it
-					<b> stays relatively similar</b>. For example, half the states with median income in the top 20% of states
-					also had rates of educational attainment in the top 20% of states. Similarly, the states with
-					median income in the bottom 20% of states also had rates of educational attainment in the bottom 20%
-					of states. So aside from the amount of public school funding, <b>socioeconomic status</b> may affect
-					whether individuals pursue post-secondary education.
-				</p>
-				<p> Note, too, that Colorado (low funding) is much higher up on the left side of the chart than Pennsylvania (high funding), and those two states had identical
-					educational outcomes as we saw above. Perhaps this higher distribution of personal income has allowed Colorado to make up in resource allocation
-					what it lost from lower federal funding.
-				</p>
-				<p>Though our data focuses largely on elementary school funding, we predict similar long-term trends among middle and high school funding.
-					To help bridge this gap, then, local governments need to both <b>prioritize their allocation of educational funding and
-						invest in public services</b> and projects that seek to reshape the socioeconomic makeups of their communities.
-				We encourage local residents to advocate for these changes within their local governments, so that schools are well prepared with the
-					resources, staff, and support necessary to set students up for future success.</p>
-			</div>
-		<div class="footer">
-			Yuen Ting Chow & Gabe LeBlanc ⓒ 2022
 		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="row story divider" id="story-outcomes">
+					<p class="divider-text"> But do states with <span style="color:yellow;"> higher per-student funding</span> have better <span style="color:yellow;"> educational outcomes</span>? <br> And if so, which type of funding is most impactful?</p>
+				</div>
+			</div>
+		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="row story">
+					<p style="border-left: solid" id="outcome_1"><b>First, take a look at the graph below of total funding (in white) vs Bachelor's Degree achievement.</b> We see a clear upward trend, so funding appears to correlate with eventual outcomes. Let's investigate what type of funding contributes most to that trend!</p>
+					<p style="border-left: solid" id="outcome_2" hidden><b>Compare the trends of federal funding per student (teal), state funding per student (tan), and local funding per student (purple).</b> Only the local funding displays a positive correlation, suggesting that pursuing a Bachelor's degree is influenced most by funding at the local level.</p>
+					<p style="border-left: solid" id="outcome_3" hidden><b>Here's the full chart. Use the checkboxes to explore trends in funding data on your own.</b></p>
+				</div>
+				<button onclick="advance()" type="button" id="outcome_next" class="btn btn-outline-primary" style="margin: 1%">Next (1/3)</button>
+				<button onclick="replay()" type="button" id="outcome_replay" class="btn btn-outline-secondary" style="margin: 1%" hidden>Replay</button>
+				<div class="row" id="outcome_checks" style="margin-left: 5%; margin-right: 5%; margin-top: 2%" hidden>
+					<div style="text-align: center; background-color: white; border: 1px dotted">
+						<input onclick="outcomes.wrangleData()" type="checkbox" id="federal_check" name="federal" style="accent-color: #58776c; outline: black">
+						<label for="federal" style="padding-right: 5%">Federal Funding Per Student</label>
+						<input onclick="outcomes.wrangleData()" type="checkbox" id="state_check" name="state" style="accent-color: darkred">
+						<label for="state" style="padding-right: 5%">State Funding Per Student</label>
+						<input onclick="outcomes.wrangleData()" type="checkbox" id="local_check" name="local" style="accent-color: #77C3EC">
+						<label for="local" style="padding-right: 5%">Local Funding Per Student</label>
+						<input onclick="outcomes.wrangleData()" type="checkbox" id="total_check" name="total" checked style="accent-color: tan; border-radius: 50%; border: 1px solid #ddd;">
+						<label for="total">Total Funding Per Student</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-1" style="display: flex;
+					 align-items: center;">
+						<button hidden onclick="goback()" type="button" id="back_button" class="btn btn-secondary" style="margin-left: auto;
+							margin-right: 0;"><<</button>
+					</div>
+					<div class="col-10 justify-content-center graph" id="outcomes"></div>
+					<div class="col-1 justify-content-right" style="display: flex;
+					 align-items: center; horiz-align: right">
+						<button hidden onclick="progress()" type="button" id="forward_button" class="btn btn-secondary" style="margin-left: 0;
+							margin-right: auto;">>></button>
+					</div>
+					<div class="source">Data from U.S. Census Bureau.</div>
+					<p> <br>These trends show that <b>increasing funding at the local level</b> may be an important way to improve educational outcomes in your local district, especially as schools can invest in the teaching staff and support resources best fit for their students' success.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="row story divider">
+					<p class="divider-text"> But of course, each district is different, and will need unique solutions to close educational gaps. <br> So how do districts in your state 'stack' up? </p>
+				</div>
+			</div>
+		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="row story" id="story-states">
+						<p> <br><br><i>Click on individual states using the map on the right to see each state's distribution of educational achievement for those 18-24. One brick is one percent.</i></div>
+				<!--https://creazilla.com/nodes/25411-school-building-clipart-->
+				<div class="row">
+					<div class="col-4">
+						<div>
+							<button type="button" class="btn btn-lg btn-secondary" style="display: inline" data-bs-toggle="modal" data-bs-target="#exampleModal1" id="select-state1">
+								Select State
+							</button>
+						</div>
+
+						<!-- Modal -->
+						<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel1">Choose a State!</h5>
+										<button type="button" class="btn-close" id="close_button1" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<h7 class="modal-header">Darker Color = More Funding Per Student</h7>
+									<div class="modal-body" id="brick-selector1">
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="brick-subtitle" id="brick-subtitle1">School Funding: </div>
+						<br>
+						<div class="row">
+							<div class="col-6">
+								<p id='stat1a' style="font-weight: bold; color: tan">Some High School: </p>
+								<p id='stat1b' style="font-weight: bold; color: #58776c">High School Grad: </p>
+							</div>
+							<div class="col-6">
+								<p id='stat1c' style="font-weight: bold; color: darkred">Some College:</p>
+								<p id='stat1d' style="font-weight: bold; color: gray">Bachelor's:</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4" style="position: relative">
+						<img class="text-center" style="width: 30%; position:absolute; bottom:0; margin-left: auto; margin-right: auto; left: 0; right: 0" src="img/clock.png" id="clock">
+					</div>
+					<div class="col-4" style="text-align: right">
+						<!-- Button trigger modal -->
+						<div>
+							<button type="button" class="btn btn-lg btn-secondary" style="display: inline" data-bs-toggle="modal" data-bs-target="#exampleModal2" id="select-state2">
+								Select State
+							</button>
+						</div>
+
+						<!-- Modal -->
+						<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel2">Choose a State!</h5>
+										<button type="button" class="btn-close" id="close_button2" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<h7 class="modal-header">Darker Color = More Funding Per Student</h7>
+									<div class="modal-body" id="brick-selector2">
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="brick-subtitle" id="brick-subtitle2">School Funding: </div>
+						<br>
+						<div class="row">
+							<div class="col-6">
+								<p id='stat2a' style="font-weight: bold; color: darkred">Some College:</p>
+								<p id='stat2b' style="font-weight: bold; color: gray">Bachelor's:</p>
+							</div>
+							<div class="col-6">
+								<p id='stat2c' style="font-weight: bold; color: tan">Some High School: </p>
+								<p id='stat2d' style="font-weight: bold; color: #58776c">High School Grad: </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6" id="bricks-1" style="border-right: solid gray; padding: 0"></div>
+					<div class="col-6" id="bricks-2" style="border-left: solid gray; padding: 0"></div>
+				</div>
+				<div class="source">Data from U.S. Census Bureau.</div>
+				<br>
+				<p>Compare two states like Massachusetts (high funding) and Idaho (low funding), and there are huge gaps in college degree attainment, as expected. But then compare Pennsylvania (high funding) and Colorado (low funding), and the distribution looks identical. </p>
+
+			</div>
+		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="row divider">
+					<p class="divider-text"> So, funding can't be the only factor at play. </p>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="row story" id="story-factors">
+					<p>Below, we explore another contributing factor: the <b>socioeconomic makeup</b> of each state, which likely bolsters or inhibits the pursuit of higher education.
+						<br><i>Hover over the curved lines on the chart below to see details about each state.</i></p>
+				</div>
+				<div class="row">
+					<div class="col-6" id="col1">
+						<div class="row" id="factors"></div>
+					</div>
+					<div class="col-6" id="col2">
+						<img src="img/states/Alabama-01.png" width="250" height="250" id="image">
+						<h2 id="state-id"></h2>
+						<div class="container w-75">
+
+							<!--						TABLE OF DATA GOES HERE-->
+							<table class="table">
+								<tbody>
+								<tr>
+									<th scope="row">Population 18-24 with Bachelor's degree or higher</th>
+									<td id="outcome-row"></td>
+								</tr>
+								<tr>
+									<th scope="row">Median Household Income</th>
+									<td id="income-row"></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="source">Data from U.S. Census Bureau.</div>
+				</div>
+				<div class="row story" id="conclusion">
+					<p> Although there is some movement between the income and educational attainment brackets, it
+						<b> stays relatively similar</b>. For example, half the states with median income in the top 20% of states
+						also had rates of educational attainment in the top 20% of states. Similarly, the states with
+						median income in the bottom 20% of states also had rates of educational attainment in the bottom 20%
+						of states. So aside from the amount of public school funding, <b>socioeconomic status</b> may affect
+						whether individuals pursue post-secondary education.
+					</p>
+					<p> Note, too, that Colorado (low funding) is much higher up on the left side of the chart than Pennsylvania (high funding), and those two states had identical
+						educational outcomes as we saw above. Perhaps this higher distribution of personal income has allowed Colorado to make up in resource allocation
+						what it lost from lower federal funding.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="divider">
+				<p class="divider-text">Though our data focuses largely on elementary school funding, we predict similar long-term trends among middle and high school funding.
+					To help bridge this gap, then, local governments need to both <span style="color:yellow">prioritize their allocation of educational funding and
+						invest in public services</span> and projects that seek to reshape the socioeconomic makeups of their communities.
+					We encourage local residents to advocate for these changes within their <span style="color:yellow">local governments</span>, so that schools are well prepared with the
+					resources, staff, and support necessary to set students up for future success.</p>
+				</div>
+				<div class="footer">
+					<br> <br> <br><br> <br> <br> Yuen Ting Chow & Gabe LeBlanc ⓒ 2022
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
 		</div>
 
 
@@ -257,8 +329,20 @@ margin-right: 0;"><<</button>
 		<script src="https://unpkg.com/d3-path@1"></script>
 		<script src="https://unpkg.com/d3-shape@1"></script>
 		<script src="https://unpkg.com/d3-sankey@0"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
 
-		<!-- own js files -->
+
+			<script>
+				new fullpage("#fullpage", {
+					licenseKey: 'gplv3-license',
+					sectionsColor: ['#274c43', '#F8F8F8', '#274c43', '#F8F8F8', '#274c43', '#F8F8F8','#274c43','#F8F8F8', '#274c43', '#fff','#274c43'],
+					sectionSelector: '.vertical-scrolling',
+					navigation: true,
+				});
+			</script>
+
+
+			<!-- own js files -->
 	<script src="js/main.js"></script>
 
 		<script src="js/geovis.js"></script>
@@ -268,6 +352,7 @@ margin-right: 0;"><<</button>
 		<script src="js/bricks.js"></script>
 		<script src="js/outcomes.js"></script>
 		<script src="js/sankeychart.js"></script>
+
 
 	</body>
 </html>

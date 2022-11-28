@@ -70,20 +70,19 @@ d3.csv("data/fundingData&Attainment.csv", row => {
 selectedCategory = "Funding_Total"
 selectedCategory2 = "Funding_TotalperStudent"
 
-document.getElementById("total").style.backgroundColor = "green";
+document.getElementById("total").style.backgroundColor = "#274c43";
 document.getElementById("total").style.color = "white";
 
-document.getElementById("total2").style.backgroundColor = "green";
+document.getElementById("total2").style.backgroundColor = "#274c43";
 document.getElementById("total2").style.color = "white";
 
 function buttonClick(_this) {
     for (let i = 0; i < 4; i++) {
-        document.getElementsByClassName(_this.className)[i].style.backgroundColor = "white";
+        document.getElementsByClassName(_this.className)[i].style.backgroundColor = "lightgray";
         document.getElementsByClassName(_this.className)[i].style.color = "black";
 
     }
-    console.log(_this.className)
-    _this.style.backgroundColor = "green";
+    _this.style.backgroundColor = "#274c43";
     _this.style.color = "white";
 
     if (_this.className === "button"){
