@@ -197,13 +197,13 @@ class Bricks {
                 return (vis.margin.left / 2 + ((vis.width - 1.1 * vis.margin.left - vis.width / 15) / 9) * (i % 10));
             })
             .attr('y', function (d, i) {
-                return Math.floor(i / 10) * 60;
+                return Math.floor(i / 10) * (vis.height / 10);
             })
             .transition()
-            .delay(function(d,i){ return 25*i; })
-            .duration(25)
+            .delay(function(d,i){ return 50*i; })
+            .duration(50)
             .attr('width', vis.width / 15)
-            .attr('height', 30)
+            .attr('height', 15)
             .attr('opacity', 0.7)
             .attr('stroke', 'black')
             .attr('fill', function (d) {

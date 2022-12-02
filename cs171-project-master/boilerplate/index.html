@@ -26,7 +26,6 @@
 				<p class="story-title" id="title-small"> and the case for</p>
 				<p class="story-title" style="color:yellow"> Public School Funding </p>
 				<p class="divider-text"> <br> Yuen Ting Chow & Gabe LeBlanc </p>
-
 			</div>
 		</div>
 		<div class="vertical-scrolling">
@@ -110,9 +109,9 @@
 					<div style="text-align: center; background-color: white; border: 1px dotted">
 						<input onclick="outcomes.wrangleData()" type="checkbox" id="federal_check" name="federal" style="accent-color: #58776c; outline: black">
 						<label for="federal" style="padding-right: 5%">Federal Funding Per Student</label>
-						<input onclick="outcomes.wrangleData()" type="checkbox" id="state_check" name="state" style="accent-color: darkred">
+						<input onclick="outcomes.wrangleData()" type="checkbox" id="state_check" name="state" style="accent-color: #77C3EC">
 						<label for="state" style="padding-right: 5%">State Funding Per Student</label>
-						<input onclick="outcomes.wrangleData()" type="checkbox" id="local_check" name="local" style="accent-color: #77C3EC">
+						<input onclick="outcomes.wrangleData()" type="checkbox" id="local_check" name="local" style="accent-color: darkred">
 						<label for="local" style="padding-right: 5%">Local Funding Per Student</label>
 						<input onclick="outcomes.wrangleData()" type="checkbox" id="total_check" name="total" checked style="accent-color: tan; border-radius: 50%; border: 1px solid #ddd;">
 						<label for="total">Total Funding Per Student</label>
@@ -144,105 +143,73 @@
 			</div>
 		</div>
 		<div class="vertical-scrolling">
-			<div class="container">
-				<div class="row story" id="story-states">
-						<p> <br><br><i>Click on individual states using the map on the right to see each state's distribution of educational achievement for those 18-24. One brick is one percent.</i></div>
-				<!--https://creazilla.com/nodes/25411-school-building-clipart-->
-				<div class="row">
-					<div class="col-4">
-						<div>
-							<button type="button" class="btn btn-lg btn-secondary" style="display: inline" data-bs-toggle="modal" data-bs-target="#exampleModal1" id="select-state1">
-								Select State
-							</button>
-						</div>
+			<div class="section">
+				<div class="container">
+					<div class="row story" id="story-states">
+							<p> <br><br><i>Click on individual states using the map on the right to see each state's distribution of educational achievement for those 18-24. One brick is one percent.</i></div>
+					<!--https://creazilla.com/nodes/25411-school-building-clipart-->
+					<div class="container">
+						<div class="row">
+							<div class="col-4">
+								<div>
+									<button type="button" class="btn btn-lg btn-secondary" style="display: inline" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-toggle="modal" id="select-state1">
+										Select State
+									</button>
+								</div>
 
-						<!-- Modal -->
-						<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel1">Choose a State!</h5>
-										<button type="button" class="btn-close" id="close_button1" data-bs-dismiss="modal" aria-label="Close"></button>
+								<div class="brick-subtitle" id="brick-subtitle1">School Funding: </div>
+								<br>
+								<div class="row">
+									<div class="col-6">
+										<p id='stat1a' style="font-weight: bold; color: tan">Some High School: </p>
+										<p id='stat1b' style="font-weight: bold; color: #58776c">High School Grad: </p>
 									</div>
-									<h7 class="modal-header">Darker Color = More Funding Per Student</h7>
-									<div class="modal-body" id="brick-selector1">
+									<div class="col-6">
+										<p id='stat1c' style="font-weight: bold; color: darkred">Some College:</p>
+										<p id='stat1d' style="font-weight: bold; color: gray">Bachelor's:</p>
 									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+								</div>
+							</div>
+							<div class="col-4" style="position: relative">
+								<img class="text-center" style="width: 30%; position:absolute; bottom:0; margin-left: auto; margin-right: auto; left: 0; right: 0" src="img/clock.png" id="clock">
+							</div>
+							<div class="col-4" style="text-align: right">
+								<!-- Button trigger modal -->
+								<div>
+									<button type="button" class="btn btn-lg btn-secondary" style="display: inline" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-toggle="modal" id="select-state2">
+										Select State
+									</button>
+								</div>
+
+								<div class="brick-subtitle" id="brick-subtitle2">School Funding: </div>
+								<br>
+								<div class="row">
+									<div class="col-6">
+										<p id='stat2a' style="font-weight: bold; color: darkred">Some College:</p>
+										<p id='stat2b' style="font-weight: bold; color: gray">Bachelor's:</p>
+									</div>
+									<div class="col-6">
+										<p id='stat2c' style="font-weight: bold; color: tan">Some High School: </p>
+										<p id='stat2d' style="font-weight: bold; color: #58776c">High School Grad: </p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="brick-subtitle" id="brick-subtitle1">School Funding: </div>
-						<br>
 						<div class="row">
-							<div class="col-6">
-								<p id='stat1a' style="font-weight: bold; color: tan">Some High School: </p>
-								<p id='stat1b' style="font-weight: bold; color: #58776c">High School Grad: </p>
-							</div>
-							<div class="col-6">
-								<p id='stat1c' style="font-weight: bold; color: darkred">Some College:</p>
-								<p id='stat1d' style="font-weight: bold; color: gray">Bachelor's:</p>
-							</div>
+							<div class="col-6" id="bricks-1" style="border-right: solid gray; padding: 0"></div>
+							<div class="col-6" id="bricks-2" style="border-left: solid gray; padding: 0"></div>
 						</div>
-					</div>
-					<div class="col-4" style="position: relative">
-						<img class="text-center" style="width: 30%; position:absolute; bottom:0; margin-left: auto; margin-right: auto; left: 0; right: 0" src="img/clock.png" id="clock">
-					</div>
-					<div class="col-4" style="text-align: right">
-						<!-- Button trigger modal -->
-						<div>
-							<button type="button" class="btn btn-lg btn-secondary" style="display: inline" data-bs-toggle="modal" data-bs-target="#exampleModal2" id="select-state2">
-								Select State
-							</button>
-						</div>
-
-						<!-- Modal -->
-						<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel2">Choose a State!</h5>
-										<button type="button" class="btn-close" id="close_button2" data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-									<h7 class="modal-header">Darker Color = More Funding Per Student</h7>
-									<div class="modal-body" id="brick-selector2">
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="brick-subtitle" id="brick-subtitle2">School Funding: </div>
+						<div class="source">Data from U.S. Census Bureau.</div>
 						<br>
-						<div class="row">
-							<div class="col-6">
-								<p id='stat2a' style="font-weight: bold; color: darkred">Some College:</p>
-								<p id='stat2b' style="font-weight: bold; color: gray">Bachelor's:</p>
-							</div>
-							<div class="col-6">
-								<p id='stat2c' style="font-weight: bold; color: tan">Some High School: </p>
-								<p id='stat2d' style="font-weight: bold; color: #58776c">High School Grad: </p>
-							</div>
-						</div>
+						<p>Compare two states like Massachusetts (high funding) and Idaho (low funding), and there are huge gaps in college degree attainment, as expected. But then compare Pennsylvania (high funding) and Colorado (low funding), and the distribution looks identical. </p>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-6" id="bricks-1" style="border-right: solid gray; padding: 0"></div>
-					<div class="col-6" id="bricks-2" style="border-left: solid gray; padding: 0"></div>
-				</div>
-				<div class="source">Data from U.S. Census Bureau.</div>
-				<br>
-				<p>Compare two states like Massachusetts (high funding) and Idaho (low funding), and there are huge gaps in college degree attainment, as expected. But then compare Pennsylvania (high funding) and Colorado (low funding), and the distribution looks identical. </p>
-
 			</div>
 		</div>
 		<div class="vertical-scrolling">
 			<div class="container">
 				<div class="row divider">
 					<p class="divider-text"> So, funding can't be the only factor at play. </p>
-					</p>
 				</div>
 			</div>
 		</div>
@@ -310,10 +277,41 @@
 		</div>
 	</div>
 
-
-
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel1">Choose a State!</h5>
+					<button type="button" class="btn-close" id="close_button1" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<h7 class="modal-header">Darker Color = More Funding Per Student</h7>
+				<div class="modal-body" id="brick-selector1">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
 		</div>
+	</div>
 
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel2">Choose a State!</h5>
+					<button type="button" class="btn-close" id="close_button2" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<h7 class="modal-header">Darker Color = More Funding Per Student</h7>
+				<div class="modal-body" id="brick-selector2">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- embedding JS libraries -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

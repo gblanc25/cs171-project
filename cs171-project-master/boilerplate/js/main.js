@@ -65,8 +65,6 @@ d3.csv("data/fundingData&Attainment.csv", row => {
 
 });
 
-
-
 selectedCategory = "Funding_Total"
 selectedCategory2 = "Funding_TotalperStudent"
 

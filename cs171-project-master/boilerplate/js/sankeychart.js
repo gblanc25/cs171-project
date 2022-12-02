@@ -42,7 +42,7 @@ class SankeyChart {
         // format variables
         vis.formatNumber = d3.format(",.0f"), // zero decimal places
             vis.format = function(d) { return vis.formatNumber(d); },
-            vis.color = d3.scaleOrdinal(d3.schemeCategory10);
+            vis.color = d3.scaleOrdinal(['#58776c', 'tan', 'darkred', 'gray', '#77C3EC']);
 
 
         // Set the sankey diagram properties

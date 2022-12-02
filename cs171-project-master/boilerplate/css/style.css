@@ -199,3 +199,7 @@ span{
 th, td{
     font-family: Century Gothic, sans-serif;
 }
+
+.fp-enabled .modal{
+    position:fixed !important;
+}
