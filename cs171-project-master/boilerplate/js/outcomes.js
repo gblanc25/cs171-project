@@ -59,7 +59,7 @@ class OutcomeScatter {
             .attr("text-anchor", "middle")
             .attr("y", vis.height / 1.75 + vis.margin.bottom)
             .attr("stroke", "black")
-            .attr("font-size", "small")
+            .attr("font-size", "1.5vh")
             .text("Amount of Funding ($)")
 
         vis.svg.append("text")
@@ -68,8 +68,8 @@ class OutcomeScatter {
             .attr("y", 7 * vis.margin.left)
             .attr("stroke", "black")
             .attr("transform", "rotate(270)")
-            .attr("font-size", "small")
-            .text("Percent With Bachelor's Degrees")
+            .attr("font-size", "1.5vh")
+            .text("18-24 Year Olds With Bachelor's Degrees (%)")
 
         // (Filter, aggregate, modify data)
         vis.wrangleData();
@@ -92,9 +92,13 @@ class OutcomeScatter {
             .attr("text-anchor", "middle")
             .attr("y", 0)
             .attr("stroke", "black")
+            .attr("font-size", "2vh")
             .text(function () {
                 if (counter === 0) {
                     return ("Bachelor's Degree Achievement vs. TOTAL Per-Student Funding")
+                }
+                if (counter === 2) {
+                    return ("Bachelor's Degree Achievement vs. Per-Student Funding")
                 }
                 else {
                     if (n === 0) {
@@ -106,9 +110,6 @@ class OutcomeScatter {
                     else {
                         return ("Bachelor's Degree Achievement vs. LOCAL Per-Student Funding")
                     }
-                }
-                if (counter === 2) {
-                    return ("Bachelor's Degree Achievement vs. Per-Student Funding")
                 }
             })
 
@@ -157,18 +158,11 @@ class OutcomeScatter {
         vis.updateVis();
     }
 
-
-    /*
-     * The drawing function - should use the D3 update sequence (enter, update, exit)
-     */
-
     updateVis() {
         let vis = this;
 
         vis.svg.selectAll('.circle_label')
             .style("display", "none")
-
-
 
         // Update domains
         vis.x

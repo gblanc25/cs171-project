@@ -31,7 +31,8 @@ class BarVis {
         vis.svg.append('g')
             .attr('class', 'title geo-text')
             .append('text')
-            .text('Top 10 States with highest per-student Funding')
+            .text('Top 10 States With Highest Per-Student Funding')
+            .attr('font-size', '1.5vh')
             .attr('transform', `translate(${vis.width / 2}, 10)`)
             .attr('text-anchor', 'middle');
 

@@ -123,21 +123,9 @@ let counter = 0;
 let cycle1;
 let cycle2;
 
-function replay() {
-    clearTimeout(cycle1);
-    clearTimeout(cycle2);
-    document.getElementById('federal_check').checked = true;
-    document.getElementById('state_check').checked = false;
-    document.getElementById('local_check').checked = false;
-    document.getElementById('total_check').checked = false;
-    counter = 0;
-    advance();
-}
-
 let n = 0;
 
 function progress() {
-    console.log(n)
     if (n === 2) {
         document.getElementById('total_check').checked = false;
         document.getElementById('federal_check').checked = true;
@@ -166,7 +154,6 @@ function progress() {
 }
 
 function goback() {
-    console.log(n)
     if (n === 0) {
         document.getElementById('total_check').checked = false;
         document.getElementById('federal_check').checked = false;
@@ -196,8 +183,8 @@ function goback() {
 
 function advance() {
     if (counter === 0) {
+        document.getElementById('outcome_1').hidden = true;
         document.getElementById('outcome_2').hidden = false;
-        document.getElementById('outcome_replay').hidden = false;
         document.getElementById('outcome_next').innerText = "Next (2/3)";
         counter++;
         document.getElementById('total_check').checked = false;
@@ -210,11 +197,11 @@ function advance() {
     else if (counter === 1) {
         clearTimeout(cycle1);
         clearTimeout(cycle2);
-        document.getElementById('outcome_replay').hidden = true;
         document.getElementById('federal_check').checked = true;
         document.getElementById('state_check').checked = true;
         document.getElementById('local_check').checked = true;
         document.getElementById('total_check').checked = true;
+        document.getElementById('outcome_2').hidden = true;
         document.getElementById('outcome_3').hidden = false;
         document.getElementById('outcome_checks').hidden = false;
         document.getElementById('forward_button').hidden = true;
@@ -226,6 +213,7 @@ function advance() {
     }
 
     else {
+        document.getElementById('outcome_1').hidden = false;
         document.getElementById('outcome_2').hidden = true;
         document.getElementById('outcome_3').hidden = true;
         document.getElementById('outcome_next').innerText = "Next (1/3)";

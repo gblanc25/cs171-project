@@ -99,12 +99,11 @@
 		<div class="vertical-scrolling">
 			<div class="container">
 				<div class="row story">
-					<p style="border-left: solid" id="outcome_1"><b>First, take a look at the graph below of total funding (in white) vs Bachelor's Degree achievement.</b> We see a clear upward trend, so funding appears to correlate with eventual outcomes. Let's investigate what type of funding contributes most to that trend!</p>
-					<p style="border-left: solid" id="outcome_2" hidden><b>Compare the trends of federal funding per student (teal), state funding per student (tan), and local funding per student (purple).</b> Only the local funding displays a positive correlation, suggesting that pursuing a Bachelor's degree is influenced most by funding at the local level.</p>
+					<p style="border-left: solid" id="outcome_1"><b>First, take a look at the graph below of total funding vs Bachelor's Degree achievement.</b> We see a clear upward trend, so funding appears to correlate with eventual outcomes. Let's investigate what type of funding contributes most to that trend!</p>
+					<p style="border-left: solid" id="outcome_2" hidden><b>Compare the trends of federal, state, and local funding per student.</b> Only the local funding displays a clear positive correlation, suggesting that pursuing a Bachelor's degree is influenced most by funding at the local level.</p>
 					<p style="border-left: solid" id="outcome_3" hidden><b>Here's the full chart. Use the checkboxes to explore trends in funding data on your own.</b></p>
 				</div>
 				<button onclick="advance()" type="button" id="outcome_next" class="btn btn-outline-primary" style="margin: 1%">Next (1/3)</button>
-				<button onclick="replay()" type="button" id="outcome_replay" class="btn btn-outline-secondary" style="margin: 1%" hidden>Replay</button>
 				<div class="row" id="outcome_checks" style="margin-left: 5%; margin-right: 5%; margin-top: 2%" hidden>
 					<div style="text-align: center; background-color: white; border: 1px dotted">
 						<input onclick="outcomes.wrangleData()" type="checkbox" id="federal_check" name="federal" style="accent-color: #58776c; outline: black">
@@ -138,7 +137,7 @@
 		<div class="vertical-scrolling">
 			<div class="container">
 				<div class="row story divider">
-					<p class="divider-text"> But of course, each district is different, and will need unique solutions to close educational gaps. <br> So how do districts in your state 'stack' up? </p>
+					<p class="divider-text"> But of course, each district is different, and will need unique solutions to close educational gaps. <br><br> So how do districts in each state 'stack' up? </p>
 				</div>
 			</div>
 		</div>
@@ -146,7 +145,10 @@
 			<div class="section">
 				<div class="container">
 					<div class="row story" id="story-states">
-							<p><i>Click on individual states using the map on the right to see each state's distribution of educational achievement for those 18-24. One brick is one percent.</i></div>
+							<p>Use the <b>Select State</b> buttons to compare the distribution of educational outcomes between two states.
+								<br> <i>One brick is one percent.</i>
+							</p>
+					</div>
 					<!--https://creazilla.com/nodes/25411-school-building-clipart-->
 					<div class="container">
 						<div class="row">
@@ -161,12 +163,12 @@
 								<br>
 								<div class="row">
 									<div class="col-6">
-										<p id='stat1a' style="font-weight: bold; color: tan">Some High School: </p>
-										<p id='stat1b' style="font-weight: bold; color: #58776c">High School Grad: </p>
+										<div id='stat1a' style="font-weight: bold; color: tan" class="brick-subtitle">Some High School: </div>
+										<div id='stat1b' style="font-weight: bold; color: #58776c" class="brick-subtitle">High School Grad: </div>
 									</div>
 									<div class="col-6">
-										<p id='stat1c' style="font-weight: bold; color: darkred">Some College:</p>
-										<p id='stat1d' style="font-weight: bold; color: gray">Bachelor's:</p>
+										<div id='stat1c' style="font-weight: bold; color: darkred" class="brick-subtitle">Some College:</div>
+										<div id='stat1d' style="font-weight: bold; color: gray" class="brick-subtitle">Bachelor's:</div>
 									</div>
 								</div>
 							</div>
@@ -185,12 +187,12 @@
 								<br>
 								<div class="row">
 									<div class="col-6">
-										<p id='stat2a' style="font-weight: bold; color: darkred">Some College:</p>
-										<p id='stat2b' style="font-weight: bold; color: gray">Bachelor's:</p>
+										<div id='stat2a' style="font-weight: bold; color: darkred" class="brick-subtitle">Some College:</div>
+										<div id='stat2b' style="font-weight: bold; color: gray" class="brick-subtitle">Bachelor's:</div>
 									</div>
 									<div class="col-6">
-										<p id='stat2c' style="font-weight: bold; color: tan">Some High School: </p>
-										<p id='stat2d' style="font-weight: bold; color: #58776c">High School Grad: </p>
+										<div id='stat2c' style="font-weight: bold; color: tan" class="brick-subtitle">Some High School: </div>
+										<div id='stat2d' style="font-weight: bold; color: #58776c" class="brick-subtitle">High School Grad: </div>
 									</div>
 								</div>
 							</div>
