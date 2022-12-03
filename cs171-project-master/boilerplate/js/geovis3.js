@@ -107,7 +107,7 @@ class GeoVis3 {
                 d3.select(this)
                     .attr('stroke-width', '2px')
                     .attr('stroke', 'black')
-                    .style('fill', 'red');
+                    .style('fill', 'yellow');
 
                 let fundingTotal = "";
                 let fundingFederal = "";

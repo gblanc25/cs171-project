@@ -12,6 +12,10 @@ let selectedCategory2;
 let selectedState = 'Massachusetts';
 let selectedFunding = 'High';
 let sankeyChart;
+let sankeyChart2;
+let sankeyChart3;
+
+
 
 let categories = {
     "total" : "Funding_Total",
@@ -62,6 +66,9 @@ d3.csv("data/fundingData&Attainment.csv", row => {
     bricks2 = new Bricks("bricks-2", data);
 
     sankeyChart = new SankeyChart("factors", data);
+    sankeyChart2 = new SankeyChart2("factors2", data);
+    sankeyChart3 = new SankeyChart3("factors3", data);
+
 
 });
 

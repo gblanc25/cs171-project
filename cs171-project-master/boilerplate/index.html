@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>CS171 - Boilerplate</title>
+		<title>Public Funding & Higher Education</title>
 
 		<!-- Load CSS libraries -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -31,8 +31,8 @@
 		<div class="vertical-scrolling">
 			<div class="container">
 				<div class="row story" id="story-intro">
-					<p> Let's explore at elementary school funding in the United States and its impact on higher education!
-					First, let's look at how school funding differs between the states.
+					<p> Let's explore elementary school funding in the United States and its impact on higher education!
+					First, let's look at how school funding differs among states.
 						<br><i>Hover over the states for more info. Use the tabs to color the map by different funding types. </i>
 						<br>
 					</p>
@@ -146,7 +146,7 @@
 			<div class="section">
 				<div class="container">
 					<div class="row story" id="story-states">
-							<p> <br><br><i>Click on individual states using the map on the right to see each state's distribution of educational achievement for those 18-24. One brick is one percent.</i></div>
+							<p><i>Click on individual states using the map on the right to see each state's distribution of educational achievement for those 18-24. One brick is one percent.</i></div>
 					<!--https://creazilla.com/nodes/25411-school-building-clipart-->
 					<div class="container">
 						<div class="row">
@@ -216,15 +216,15 @@
 		<div class="vertical-scrolling">
 			<div class="container">
 				<div class="row story" id="story-factors">
-					<p>Below, we explore another contributing factor: the <b>socioeconomic makeup</b> of each state, which likely bolsters or inhibits the pursuit of higher education.
-						<br><i>Hover over the curved lines on the chart below to see details about each state.</i></p>
+					<p><br>Below, we explore another contributing factor: the <b>socioeconomic makeup</b> of each state, which likely bolsters or inhibits the pursuit of higher education.
+						<i>Hover over the curved lines on the chart below to see details about each state.</i></p>
 				</div>
 				<div class="row">
 					<div class="col-6" id="col1">
 						<div class="row" id="factors"></div>
 					</div>
 					<div class="col-6" id="col2">
-						<img src="img/states/Alabama-01.png" width="250" height="250" id="image">
+						<img src="img/states/Alabama-01.png" width="200" height="200" id="image">
 						<h2 id="state-id"></h2>
 						<div class="container w-75">
 
@@ -253,24 +253,138 @@
 						of states. So aside from the amount of public school funding, <b>socioeconomic status</b> may affect
 						whether individuals pursue post-secondary education.
 					</p>
-					<p> Note, too, that Colorado (low funding) is much higher up on the left side of the chart than Pennsylvania (high funding), and those two states had identical
-						educational outcomes as we saw above. Perhaps this higher distribution of personal income has allowed Colorado to make up in resource allocation
-						what it lost from lower federal funding.
-					</p>
 				</div>
 			</div>
 		</div>
 		<div class="vertical-scrolling">
 			<div class="container">
+				<div class="row story" id="story-factors2">
+					<p> Note, too, that <span style="color:green;"><b>Colorado</b></span> (low funding) is much higher up on the left side of the chart than  <span style="color:darkblue;"><b>Pennsylvania</b></span>, and those two states had identical
+						educational outcomes as we saw above. Perhaps this higher distribution of personal income has allowed <span style="color:green;"><b>Colorado</b></span> to make up in resource allocation
+						what it lost from lower federal funding.
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-6" id="col1-2">
+						<div class="row" id="factors2"></div>
+					</div>
+					<div class="col-3" id="col2-2">
+						<img src="img/states/Colorado-01.png" width="200" height="200" id="image2">
+						<h2 id="state-id2">Colorado</h2>
+						<div class="container">
+
+							<!--						TABLE OF DATA GOES HERE-->
+							<table class="table">
+								<tbody>
+								<tr>
+									<th scope="row">Population 18-24 with Bachelor's degree or higher</th>
+									<td id="outcome-row2"></td>
+								</tr>
+								<tr>
+									<th scope="row">Median Household Income</th>
+									<td id="income-row2"></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="col-3" id="col2-3">
+						<img src="img/states/Pennsylvania-02.png" width="200" height="200" id="image3">
+						<h2 id="state-id3">Pennsylvania</h2>
+						<div class="container">
+
+							<!--						TABLE OF DATA GOES HERE-->
+							<table class="table">
+								<tbody>
+								<tr>
+									<th scope="row">Population 18-24 with Bachelor's degree or higher</th>
+									<td id="outcome-row3"></td>
+								</tr>
+								<tr>
+									<th scope="row">Median Household Income</th>
+									<td id="income-row3"></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="source">Data from U.S. Census Bureau.</div>
+				</div>
+				<div class="row story" id="conclusion2">
+				</div>
+			</div>
+		</div>
+
+		<div class="vertical-scrolling">
+			<div class="container">
+				<div class="row story" id="story-factors3">
+					<p> Additionally, we can see that <span style="color:green;"><b>Alaska</b></span> and <span style="color:goldenrod;"><b>Utah</b></span> both have relatively high median family incomes,
+						yet are both in the bottom quintile with respect to educational outcomes. This suggests that there may be factors such as local cultural practices and beliefs
+						that influence the decision to pursue higher education.
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-6" id="col1-3">
+						<div class="row" id="factors3"></div>
+					</div>
+					<div class="col-3" id="col2-4">
+						<img src="img/states/Alaska-01.png" width="200" height="200">
+						<h2>Alaska</h2>
+						<div class="container">
+
+							<!--						TABLE OF DATA GOES HERE-->
+							<table class="table">
+								<tbody>
+								<tr>
+									<th scope="row">Population 18-24 with Bachelor's degree or higher</th>
+									<td id="outcome-row4"></td>
+								</tr>
+								<tr>
+									<th scope="row">Median Household Income</th>
+									<td id="income-row4"></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="col-3" id="col2-5">
+						<img src="img/states/Utah-02.png" width="200" height="200">
+						<h2>Utah</h2>
+						<div class="container">
+
+							<!--						TABLE OF DATA GOES HERE-->
+							<table class="table">
+								<tbody>
+								<tr>
+									<th scope="row">Population 18-24 with Bachelor's degree or higher</th>
+									<td id="outcome-row5"></td>
+								</tr>
+								<tr>
+									<th scope="row">Median Household Income</th>
+									<td id="income-row5"></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="source">Data from U.S. Census Bureau.</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="vertical-scrolling">
+			<div class="container">
 				<div class="divider">
-				<p class="divider-text">Though our data focuses largely on elementary school funding, we predict similar long-term trends among middle and high school funding.
+				<p class="divider-text">Though our data focuses largely on elementary school funding, we anticipate to see similar long-term trends among middle and high school funding.
 					To help bridge this gap, then, local governments need to both <span style="color:yellow">prioritize their allocation of educational funding and
 						invest in public services</span> and projects that seek to reshape the socioeconomic makeups of their communities.
 					We encourage local residents to advocate for these changes within their <span style="color:yellow">local governments</span>, so that schools are well prepared with the
 					resources, staff, and support necessary to set students up for future success.</p>
 				</div>
 				<div class="footer">
-					<br> <br> <br><br> <br> <br> Yuen Ting Chow & Gabe LeBlanc ⓒ 2022
+					<br> <br> <br> Yuen Ting Chow & Gabe LeBlanc ⓒ 2022
 				</div>
 
 			</div>
@@ -333,7 +447,7 @@
 			<script>
 				new fullpage("#fullpage", {
 					licenseKey: 'gplv3-license',
-					sectionsColor: ['#274c43', '#F8F8F8', '#274c43', '#F8F8F8', '#274c43', '#F8F8F8','#274c43','#F8F8F8', '#274c43', '#fff','#274c43'],
+					sectionsColor: ['#274c43', '#F8F8F8', '#274c43', '#F8F8F8', '#274c43', '#F8F8F8','#274c43','#F8F8F8', '#274c43', '#fff','#fff','#fff','#274c43'],
 					sectionSelector: '.vertical-scrolling',
 					navigation: true,
 				});
@@ -350,6 +464,8 @@
 		<script src="js/bricks.js"></script>
 		<script src="js/outcomes.js"></script>
 		<script src="js/sankeychart.js"></script>
+		<script src="js/sankeychart2.js"></script>
+		<script src="js/sankeychart3.js"></script>
 
 
 	</body>

@@ -15,6 +15,10 @@ body {
     padding: 20px 0px 20px 0px;
 }
 
+#story-factors, #story-factors2, #story-factors3{
+    padding: 0px 0px 0px 0px;
+}
+
 .graph {
     padding: 30px 0px 30px 0px;
     text-align: center;
@@ -141,7 +145,7 @@ body {
     stroke-opacity: .5;
 }
 
-#factors {
+#factors, #factors2, #factors3 {
     height: 60vh;
 
 }
@@ -149,6 +153,11 @@ body {
 #col2{
     display: none;
     text-align: center;
+    height: 60vh;
+}
+#col2-2, #col2-3, #col2-4, #col2-5{
+    text-align: center;
+    height: 60vh;
 }
 
 .sankey-title{
@@ -163,7 +172,7 @@ body {
 }
 p {
     /*color: #fff;*/
-    font-size: 12px;
+    font-size: 2.5vh;
     font-family: Century Gothic, sans-serif;
 }
 
@@ -177,7 +186,7 @@ p {
 
 .divider-text{
     color: white;
-    font-size: 20px;
+    font-size: 4vh;
     text-align: center;
 }
 
@@ -202,4 +211,8 @@ th, td{
 
 .fp-enabled .modal{
     position:fixed !important;
+}
+
+.container{
+    padding:0px;
 }
