@@ -23,11 +23,6 @@ class Bricks {
                 output.push(Math.round(acc) - Math.round(currentAcc));
             }
 
-            // code from https://javascript.info/task/shuffle
-            this.shuffle = function(array) {
-                array.sort(() => Math.random() - 0.5);
-            }
-
             return output;
         }
 
@@ -170,7 +165,7 @@ class Bricks {
 
         if (vis.parentElement === 'bricks-1') {
             document.getElementById('select-state1').innerHTML = vis.state;
-            document.getElementById('brick-subtitle1').innerHTML = "School Funding: " + selectedFunding;
+            document.getElementById('brick-subtitle1').innerHTML = "Local Funding: " + selectedFunding;
             document.getElementById('stat1c').innerHTML = "Some College: " + vis.roundedData[2] + "%";
             document.getElementById('stat1d').innerHTML = "Bachelor's: " + vis.roundedData[3] + "%";
             document.getElementById('stat1a').innerHTML = "Some High School: " + vis.roundedData[0] + "%";
@@ -179,7 +174,7 @@ class Bricks {
 
         else {
             document.getElementById('select-state2').innerHTML = vis.state;
-            document.getElementById('brick-subtitle2').innerHTML = "School Funding: " + selectedFunding;
+            document.getElementById('brick-subtitle2').innerHTML = "Local Funding: " + selectedFunding;
             document.getElementById('stat2a').innerHTML = "Some College: " + vis.roundedData[2] + "%";
             document.getElementById('stat2b').innerHTML = "Bachelor's: " + vis.roundedData[3] + "%";
             document.getElementById('stat2c').innerHTML = "Some High School: " + vis.roundedData[0] + "%";
