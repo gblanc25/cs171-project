@@ -23,11 +23,6 @@ class Bricks {
                 output.push(Math.round(acc) - Math.round(currentAcc));
             }
 
-            // code from https://javascript.info/task/shuffle
-            this.shuffle = function(array) {
-                array.sort(() => Math.random() - 0.5);
-            }
-
             return output;
         }
 
