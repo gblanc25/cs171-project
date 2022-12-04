@@ -201,3 +201,8 @@ th, td{
 .container{
     padding:0px;
 }
+
+#instructions{
+    margin: auto;
+    text-align: center;
+}

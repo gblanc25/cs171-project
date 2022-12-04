@@ -119,6 +119,7 @@ class SankeyChart {
             })
             .on('mouseout', function(event, d) {
                 document.getElementById('col2').style.display = "none";
+                document.getElementById('instructions').style.display = "block";
             })
 
 
@@ -167,6 +168,7 @@ class SankeyChart {
 //function to change contents (called when bar or text is clicked)
 function changeContents(d) {
     document.getElementById('col2').style.display = "block";
+    document.getElementById('instructions').style.display = "none";
     document.getElementById('image').src = "img/states/" + d.class.replace(/\s/g, '') + "-01.png";
     document.getElementById("state-id").innerHTML = d.class;
     document.getElementById("outcome-row").innerHTML = d.outcome + "%";
