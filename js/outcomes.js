@@ -95,21 +95,10 @@ class OutcomeScatter {
             .attr("font-size", "2vh")
             .text(function () {
                 if (counter === 0) {
-                    return ("Bachelor's Degree Achievement vs. TOTAL Per-Student Funding")
+                    return ("18-24 Year Olds with Bachelor's Degrees vs. TOTAL Per-Student Funding")
                 }
-                if (counter === 2) {
-                    return ("Bachelor's Degree Achievement vs. Per-Student Funding")
-                }
-                else {
-                    if (n === 0) {
-                        return ("Bachelor's Degree Achievement vs. FEDERAL Per-Student Funding")
-                    }
-                    else if (n === 1) {
-                        return ("Bachelor's Degree Achievement vs. STATE Per-Student Funding")
-                    }
-                    else {
-                        return ("Bachelor's Degree Achievement vs. LOCAL Per-Student Funding")
-                    }
+                if (counter === 1) {
+                    return ("18-24 Year Olds with Bachelor's Degrees vs. Per-Student Funding")
                 }
             })
 
