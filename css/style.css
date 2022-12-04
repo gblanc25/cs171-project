@@ -178,14 +178,12 @@ p {
 }
 
 #sources{
-    text-align: left;
     font-weight: normal;
 }
 
 a{
     color: white;
     font-family: Century Gothic, sans-serif;
-    text-decoration:none;
 }
 a:hover{
     color: yellow
