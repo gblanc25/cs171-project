@@ -83,7 +83,7 @@ class GeoVis3 {
     updateVis() {
         let vis = this;
 
-        vis.colorScale.domain([d3.min(vis.fundingData, d=> +d["Funding_TotalperStudent"]),d3.max(vis.fundingData, d=> +d["Funding_TotalperStudent"])])
+        vis.colorScale.domain([d3.min(vis.fundingData, d=> +d["Funding_LocalperStudent"]),d3.max(vis.fundingData, d=> +d["Funding_LocalperStudent"])])
 
         vis.states
             .style("fill", d => {
@@ -94,7 +94,7 @@ class GeoVis3 {
 
                 vis.fundingData.forEach(d => {
                     if (d.State === stateName){
-                        color = vis.colorScale(+d["Funding_TotalperStudent"])
+                        color = vis.colorScale(+d["Funding_LocalperStudent"])
                         // console.log(d[selectedCategory])
                     }
 
@@ -152,7 +152,7 @@ class GeoVis3 {
 
                         vis.fundingData.forEach(d => {
                             if (d["State"] === stateName){
-                                color = vis.colorScale(+d["Funding_TotalperStudent"])
+                                color = vis.colorScale(+d["Funding_LocalperStudent"])
                             }
 
                         })
@@ -172,10 +172,10 @@ class GeoVis3 {
 
                 vis.fundingData.forEach(d => {
                     if (d["State"] === selectedState){
-                        if (+d["Funding_TotalperStudent"] < 15000) {
+                        if (+d["Funding_LocalperStudent"] < 5000) {
                             selectedFunding = 'Low';
                         }
-                        else if (+d["Funding_TotalperStudent"] < 20000) {
+                        else if (+d["Funding_LocalperStudent"] < 10000) {
                             selectedFunding = 'Medium';
                         }
                         else {
