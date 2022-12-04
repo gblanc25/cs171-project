@@ -177,6 +177,19 @@ p {
     text-align: center;
 }
 
+#sources{
+    text-align: left;
+    font-weight: normal;
+}
+
+a{
+    color: white;
+    font-family: Century Gothic, sans-serif;
+    text-decoration:none;
+}
+a:hover{
+    color: yellow
+}
 .geo-text{
     font-size: 12px;
     font-family: Century Gothic, sans-serif;
