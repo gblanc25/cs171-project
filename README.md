@@ -2,7 +2,7 @@
 
 Our project examines Census Bureau data concerning the allocation of funding to elementary schools and the distribution of educational outcomes in each state to determine if funding correlates with better educational attainment. We further examine the broader impact of socioeconomic status on school funding and educational attainment, and urge viewers to advocate for better funding and services within their local governments. 
 
-[Link to project website](gblanc25.github.io/public-school-funding)
+[Link to project website](https://gblanc25.github.io/public-school-funding)
 
 [Link to project video](https://youtu.be/Njn7AN9JN3k)
 
