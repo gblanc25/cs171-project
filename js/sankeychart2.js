@@ -128,7 +128,7 @@ class SankeyChart2 {
         })
 
         vis.svg.selectAll("#Pennsylvania")
-            .style("stroke", "darkblue")
+            .style("stroke", "yellow")
             .style("stroke-opacity", 1)
             .attr("id", d => {
                 document.getElementById("outcome-row3").innerHTML = d.outcome + "%";
