@@ -10,12 +10,10 @@ let bricks_selector2;
 let selectedCategory;
 let selectedCategory2;
 let selectedState = 'Massachusetts';
-let selectedFunding = 'High';
+let selectedFunding = '';
 let sankeyChart;
 let sankeyChart2;
 let sankeyChart3;
-
-
 
 let categories = {
     "total" : "Funding_Total",
@@ -69,7 +67,6 @@ d3.csv("data/fundingData&Attainment.csv", row => {
     sankeyChart2 = new SankeyChart2("factors2", data);
     sankeyChart3 = new SankeyChart3("factors3", data);
 
-
 });
 
 selectedCategory = "Funding_Total"
@@ -101,8 +98,6 @@ function buttonClick(_this) {
         fundingmap2.updateVis()
         barvis.wrangleData()
 
-
-
     }
 
 }
@@ -120,110 +115,33 @@ document.getElementById("exampleModal2").addEventListener('mouseover', function(
 })
 
 let counter = 0;
-let cycle1;
-let cycle2;
 
 let n = 0;
 
-function progress() {
-    if (n === 2) {
-        document.getElementById('total_check').checked = false;
-        document.getElementById('federal_check').checked = true;
-        document.getElementById('state_check').checked = false;
-        document.getElementById('local_check').checked = false;
-        n = 0;
-        outcomes.wrangleData();
-        return;
-    }
-    n++;
-    if (n === 1) {
-        document.getElementById('total_check').checked = false;
-        document.getElementById('federal_check').checked = false;
-        document.getElementById('state_check').checked = true;
-        document.getElementById('local_check').checked = false;
-        outcomes.wrangleData();
-    }
-
-    else {
-        document.getElementById('total_check').checked = false;
-        document.getElementById('federal_check').checked = false;
-        document.getElementById('state_check').checked = false;
-        document.getElementById('local_check').checked = true;
-        outcomes.wrangleData();
-    }
-}
-
-function goback() {
-    if (n === 0) {
-        document.getElementById('total_check').checked = false;
-        document.getElementById('federal_check').checked = false;
-        document.getElementById('state_check').checked = false;
-        document.getElementById('local_check').checked = true;
-        n = 2;
-        outcomes.wrangleData();
-        return;
-    }
-    n--;
-    if (n === 0) {
-        document.getElementById('total_check').checked = false;
-        document.getElementById('federal_check').checked = true;
-        document.getElementById('state_check').checked = false;
-        document.getElementById('local_check').checked = false;
-        outcomes.wrangleData();
-    }
-
-    else {
-        document.getElementById('total_check').checked = false;
-        document.getElementById('federal_check').checked = false;
-        document.getElementById('state_check').checked = true;
-        document.getElementById('local_check').checked = false;
-        outcomes.wrangleData();
-    }
-}
-
 function advance() {
+
     if (counter === 0) {
+        document.getElementById('federal_check').checked = true;
+        document.getElementById('state_check').checked = true;
+        document.getElementById('local_check').checked = true;
+        document.getElementById('total_check').checked = false;
         document.getElementById('outcome_1').hidden = true;
         document.getElementById('outcome_2').hidden = false;
-        document.getElementById('outcome_next').innerText = "Next (2/3)";
-        counter++;
-        document.getElementById('total_check').checked = false;
-        document.getElementById('federal_check').checked = true;
-        document.getElementById('forward_button').hidden = false;
-        document.getElementById('back_button').hidden = false;
-        outcomes.wrangleData();
-    }
-
-    else if (counter === 1) {
-        clearTimeout(cycle1);
-        clearTimeout(cycle2);
-        document.getElementById('federal_check').checked = true;
-        document.getElementById('state_check').checked = true;
-        document.getElementById('local_check').checked = true;
-        document.getElementById('total_check').checked = true;
-        document.getElementById('outcome_2').hidden = true;
-        document.getElementById('outcome_3').hidden = false;
         document.getElementById('outcome_checks').hidden = false;
-        document.getElementById('forward_button').hidden = true;
-        document.getElementById('back_button').hidden = true;
         counter++;
         outcomes.wrangleData();
         document.getElementById('outcome_next').innerText = "Restart";
-
     }
 
     else {
         document.getElementById('outcome_1').hidden = false;
         document.getElementById('outcome_2').hidden = true;
-        document.getElementById('outcome_3').hidden = true;
-        document.getElementById('outcome_next').innerText = "Next (1/3)";
+        document.getElementById('outcome_next').innerText = "Next";
         document.getElementById('federal_check').checked = false;
         document.getElementById('state_check').checked = false
         document.getElementById('local_check').checked = false;
         document.getElementById('total_check').checked = true;
         document.getElementById('outcome_checks').hidden = true;
-        document.getElementById('forward_button').hidden = true;
-        document.getElementById('back_button').hidden = true;
         counter = 0;
         outcomes.wrangleData();
     }
