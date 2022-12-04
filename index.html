@@ -92,7 +92,7 @@
 		<div class="vertical-scrolling">
 			<div class="container">
 				<div class="row story divider" id="story-outcomes">
-					<p class="divider-text"> But do states with <span style="color:yellow;"> higher per-student funding</span> have better <span style="color:yellow;"> educational outcomes</span>? <br> And if so, which type of funding is most impactful?</p>
+					<p class="divider-text"> But do states with <span style="color:yellow;"> higher per-student funding</span> have better <span style="color:yellow;"> educational outcomes</span>? <br><br> And if so, which type of funding is most impactful?</p>
 				</div>
 			</div>
 		</div>
@@ -101,7 +101,6 @@
 				<div class="row story">
 					<p style="border-left: solid" id="outcome_1"><b>First, take a look at the graph below of total funding vs Bachelor's Degree achievement.</b> We see a clear upward trend, so per-student funding appears to correlate with eventual outcomes. Let's investigate what type of funding contributes most to that trend!</p>
 					<p style="border-left: solid" id="outcome_2" hidden><b>Compare the trends of federal, state, and local funding per student.</b> Only the local funding displays a clear positive correlation, suggesting that pursuing a Bachelor's degree is influenced most by funding at the local level.</p>
-					<p style="border-left: solid" id="outcome_3" hidden><b>Here's the full chart. Use the checkboxes to explore trends in funding data on your own.</b></p>
 				</div>
 				<button onclick="advance()" type="button" id="outcome_next" class="btn btn-outline-primary" style="margin: 1%">Next (1/3)</button>
 				<div class="row" id="outcome_checks" style="margin-left: 5%; margin-right: 5%; margin-top: 2%" hidden>
@@ -112,22 +111,11 @@
 						<label for="state" style="padding-right: 5%">State Funding Per Student</label>
 						<input onclick="outcomes.wrangleData()" type="checkbox" id="local_check" name="local" style="accent-color: darkred">
 						<label for="local" style="padding-right: 5%">Local Funding Per Student</label>
-						<input onclick="outcomes.wrangleData()" type="checkbox" id="total_check" name="total" checked style="accent-color: tan; border-radius: 50%; border: 1px solid #ddd;">
-						<label for="total">Total Funding Per Student</label>
+						<input checked hidden onclick="outcomes.wrangleData()" type="checkbox" id="total_check" name="total">
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-1" style="display: flex;
-					 align-items: center;">
-						<button hidden onclick="goback()" type="button" id="back_button" class="btn btn-secondary" style="margin-left: auto;
-							margin-right: 0;"><<</button>
-					</div>
-					<div class="col-10 justify-content-center graph" id="outcomes"></div>
-					<div class="col-1 justify-content-right" style="display: flex;
-					 align-items: center; horiz-align: right">
-						<button hidden onclick="progress()" type="button" id="forward_button" class="btn btn-secondary" style="margin-left: 0;
-							margin-right: auto;">>></button>
-					</div>
+					<div class="col-12 justify-content-center graph" id="outcomes"></div>
 					<div class="source">Data from U.S. Census Bureau.</div>
 				</div>
 			</div>
@@ -159,7 +147,7 @@
 									</button>
 								</div>
 
-								<div class="brick-subtitle" id="brick-subtitle1">School Funding: </div>
+								<div class="brick-subtitle" id="brick-subtitle1">Local Funding: </div>
 								<br>
 								<div class="row">
 									<div class="col-6">
@@ -183,7 +171,7 @@
 									</button>
 								</div>
 
-								<div class="brick-subtitle" id="brick-subtitle2">School Funding: </div>
+								<div class="brick-subtitle" id="brick-subtitle2">Local Funding: </div>
 								<br>
 								<div class="row">
 									<div class="col-6">
@@ -210,16 +198,16 @@
 		<div class="vertical-scrolling">
 			<div class="container">
 				<div class="row divider">
-					<p class="divider-text"> States like Massachusetts (high funding) and Idaho (low funding) have huge gaps in college degree attainment, as expected. But with Pennsylvania (high funding) and Colorado (low funding), the distribution looks identical.
+					<p class="divider-text"> With many states, like Massachusetts (high funding) and Idaho (low funding), there are huge gaps in college degree attainment, as expected. Some states (like Vermont), though, allocate more of their funds through state and federal means and still experience high outcomes.
 					<br><br>
-					These discrepancies mean <span style="color:yellow">funding can't be the only factor at play.</span> </p>
+					Therefore, though local funding often seems to support higher outcomes, <span style="color:yellow">funding alone cannot tell the full story</span>. What broader factors might be at play?</span> </p>
 				</div>
 			</div>
 		</div>
 		<div class="vertical-scrolling">
 			<div class="container">
 				<div class="row story" id="story-factors">
-					<p><br>Below, we explore another contributing factor: the <b>socioeconomic makeup</b> of each state, which likely impacts the likelihood of pursuing higher education.
+					<p><br>Below, we explore another contributing factor: the <b>socioeconomic makeup</b> of each state, which impacts funding and likely influences whether someone pursues higher education.
 				</div>
 				<div class="row">
 					<div class="col-6" id="col1">
