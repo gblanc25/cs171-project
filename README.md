@@ -6,7 +6,7 @@ Our project examines Census Bureau data concerning the allocation of funding to 
 
 [Link to project video](https://youtu.be/Njn7AN9JN3k)
 
-Below, we outline documentation for each of our four main visuals. All of these visuals are our own code (though they do use some outside functions), and the only main use of a separate library is <b>fullpage.js</b> for the template and scrolling features on our site. 
+Below, we outline documentation for each of our four main visuals. All of these visuals are our own code (though they do use some outside functions), and the only main use of a separate library is <b>fullpage.js</b> for the template and scrolling features on our site. A description of our data can be found in the data folder. 
 
 <hr>
 
