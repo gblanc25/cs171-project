@@ -49,6 +49,7 @@ class Bricks {
             .append("g")
             .attr("transform", "translate(" + 0 + "," + vis.margin.top + ")");
 
+        // for sake of transition, remove all existing rects
         vis.svg.selectAll('rect').remove();
 
         let temp_data = Array(100);
@@ -56,6 +57,7 @@ class Bricks {
         let bricks = vis.svg.selectAll('rect')
             .data(temp_data);
 
+        // append initial brick outlines, before states are selected
         bricks.enter().append('rect')
             .attr('x', function (d, i) {
                 return (vis.margin.left / 2 + ((vis.width - 1.1 * vis.margin.left - vis.width / 15) / 9) * (i % 10));
@@ -70,52 +72,6 @@ class Bricks {
             .attr('height', 15)
             .attr('stroke', 'black')
             .attr('fill', 'transparent')
-
-        /*let legendElement;
-        if (vis.parentElement === 'bricks-1'){
-            legendElement = 'bricks-info1';
-        }
-        else {
-            legendElement = 'bricks-info2';
-        }
-
-        vis.infosvg = d3.select("#" + legendElement).append("svg")
-            .attr("width", document.getElementById(legendElement).getBoundingClientRect().width)
-            .attr("height", 65)
-            .append("g")
-
-        vis.infosvg.append("rect")
-            .attr("x", 1)
-            .attr("y", vis.margin.top)
-            .attr("width", document.getElementById(legendElement).getBoundingClientRect().width - vis.margin.left)
-            .attr("height", 40)
-            .attr("fill", 'white')
-            .attr("stroke", "gray")
-
-        let blocks = vis.infosvg.selectAll(".legend_rect")
-            .data([{title: "Less than High School", color: 'rgba(255,227,110,30)'}, {title: "High School Graduate", color: '#BC8A3C'},
-                {title: "Some College", color: '#BC4A3C'}, {title: "Bachelor's", color: '#a2a2a2'}])
-
-        blocks.enter().append("rect")
-            .attr("x", (d, i) => 0.5 * vis.margin.left + vis.width / 6 * i)
-            .attr("y", 1.5 * vis.margin.top)
-            .attr("width", 20)
-            .attr("height", 20)
-            .attr("class", "legend_rect")
-            .attr("fill", (d) => d.color)
-            .attr("stroke", "black")
-
-        let labels = vis.infosvg.selectAll("text")
-            .data([{title: "Some High School", color: 'rgba(255,227,110,30)'}, {title: "High School Grad", color: '#BC8A3C'},
-                {title: "Some College", color: '#BC4A3C'}, {title: "Bachelor's", color: '#a2a2a2'}])
-
-        labels.enter().append("text")
-            .attr("x", (d, i) => 1.75 * vis.margin.left + vis.width / 6 * i)
-            .attr("y", 2.25 * vis.margin.top)
-            .attr("class", "legend")
-            .text((d) => d.title)*/
-
-        // (Filter, aggregate, modify data)
     }
 
     /*
@@ -163,6 +119,7 @@ class Bricks {
     updateVis() {
         let vis = this;
 
+        // update data above graph
         if (vis.parentElement === 'bricks-1') {
             document.getElementById('select-state1').innerHTML = vis.state;
             document.getElementById('brick-subtitle1').innerHTML = "Local Funding: " + selectedFunding;
@@ -187,6 +144,7 @@ class Bricks {
         let bricks = vis.svg.selectAll('rect')
             .data(vis.displayData);
 
+        // append bricks with transition and corresponding colors
         bricks.enter().append('rect')
             .attr('x', function (d, i) {
                 return (vis.margin.left / 2 + ((vis.width - 1.1 * vis.margin.left - vis.width / 15) / 9) * (i % 10));
