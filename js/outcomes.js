@@ -54,6 +54,7 @@ class OutcomeScatter {
             .attr("transform", "translate(" + 10 * vis.margin.left + "," + (vis.height / 2) + ")")
             .call(vis.xAxis);
 
+        // Append axis labels
         vis.svg.append("text")
             .attr("x", vis.width / 2)
             .attr("text-anchor", "middle")
@@ -86,6 +87,7 @@ class OutcomeScatter {
 
         vis.svg.selectAll(".outcome_title").remove();
 
+        // Append graph titles
         vis.svg.append("text")
             .attr("x", vis.width / 2)
             .attr("class", "outcome_title")
@@ -102,6 +104,7 @@ class OutcomeScatter {
                 }
             })
 
+        // Compile data points to be displayed as circles, sorted by funding type
         vis.data.forEach(function (d) {
             if (document.getElementById('total_check').checked) {
                 points.push({
@@ -171,6 +174,7 @@ class OutcomeScatter {
         let circles = vis.svg.selectAll("circle")
             .data(this.displayData, d=>d)
 
+        // append circles for each data point
         circles.enter().append("circle")
             .merge(circles)
             .attr("cx", (d) => 10 * vis.margin.left + vis.x(d["funding"]))
@@ -196,6 +200,7 @@ class OutcomeScatter {
             .attr("stroke", "black")
             .attr("stroke-width", "2px")
 
+        // append text on hover
         vis.svg.selectAll('circle')
             .on('mouseover', function(event, d) {
                 d3.select("#label_" + d["name"] + "_" + d["type"]).style("display", "block");
