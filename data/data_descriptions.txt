@@ -4,6 +4,8 @@ Our data has been combined and cleaned from the following two sites:
 - https://www.census.gov/data/tables/2020/econ/school-finances/secondary-education-finance.html (2020)
 - https://data.census.gov/cedsci/table?q=S1501&g=0100000US%240400000&tid=ACSST1Y2021.S1501&moe=false&tp=false (2021)
 
+Important note about state-based data: the data is based on current state of residence, which for college students may involve the state where they attend college. However, most students attend college within their home state, so we anticipate that any differences based on this method of collection would be minimized. 
+
 Description of columns:
 State: state name
 Funding_Total: total funding ($)
