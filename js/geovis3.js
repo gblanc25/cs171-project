@@ -32,6 +32,7 @@ class GeoVis3 {
         vis.viewpoint = {"width":975, "height": 610};
         vis.zoom = vis.width / vis.viewpoint.width;
 
+        // define map elements
         vis.map =vis.svg.append("g")
             .attr("class", "usa")
             .attr("transform", `scale(${vis.zoom} ${vis.zoom})`);
@@ -40,6 +41,7 @@ class GeoVis3 {
 
         vis.data = topojson.feature(vis.geoData, vis.geoData.objects.states).features
 
+        // draw states
         vis.states = vis.map.selectAll(".state")
             .data(vis.data)
             .enter()
@@ -69,8 +71,6 @@ class GeoVis3 {
     wrangleData() {
         let vis = this;
 
-        // do stuff
-
         // Update the visualization
         vis.updateVis();
     }
@@ -88,20 +88,19 @@ class GeoVis3 {
         vis.states
             .style("fill", d => {
                 let stateName = d.properties.name
-                // console.log(stateName)
 
                 let color = ""
 
                 vis.fundingData.forEach(d => {
                     if (d.State === stateName){
                         color = vis.colorScale(+d["Funding_LocalperStudent"])
-                        // console.log(d[selectedCategory])
                     }
 
                 })
                 return color;
             })
 
+        // enable tooltip for each state
         vis.svg.selectAll(".states")
             .on('mouseover', function(event, d){
                 d3.select(this)
@@ -166,6 +165,7 @@ class GeoVis3 {
                     .html(``);
             })
 
+            // once selected, call the bricks visualization
             .on('click', function(event, d) {
 
                 selectedState = d.properties.name;
