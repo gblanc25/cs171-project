@@ -49,6 +49,7 @@ Promise.all(promises)
 
 d3.csv("data/fundingData&Attainment.csv", row => {
 
+    // clean data
     row.cat1_18to24 = +(row.cat1_18to24.replace('%', ''));
     row.cat2_18to24 = +(row.cat2_18to24.replace('%', ''));
     row.cat3_18to24 = +(row.cat3_18to24.replace('%', ''));
@@ -91,7 +92,6 @@ function buttonClick(_this) {
         selectedCategory = categories[_this.id]
         fundingmap.updateVis()
 
-
     }
     else {
         selectedCategory2 = categories[_this.id]
@@ -102,6 +102,7 @@ function buttonClick(_this) {
 
 }
 
+// Enable modals for state selection in Bricks vis
 document.getElementById("exampleModal1").addEventListener('mouseover', function() {
     if (!bricks_selector1) {
         bricks_selector1 = new GeoVis3("brick-selector1", dataforbricks[0], dataforbricks[1]);
@@ -118,6 +119,7 @@ let counter = 0;
 
 let n = 0;
 
+// Hide elements in outcome vis as needed when users toggle between two graphs
 function advance() {
 
     if (counter === 0) {
