@@ -1,0 +1,33 @@
+Description of Data
+
+Our data has been combined and cleaned from the following two sites:
+- https://www.census.gov/data/tables/2020/econ/school-finances/secondary-education-finance.html (2020)
+- https://data.census.gov/cedsci/table?q=S1501&g=0100000US%240400000&tid=ACSST1Y2021.S1501&moe=false&tp=false (2021)
+
+Description of columns:
+State: state name
+Funding_Total: total funding ($)
+Funding_Federal: total federal funding ($)
+Funding_State: total state funding ($)
+Funding_Local: total local funding ($)
+Expenditure_Total: total expenditures ($)
+Funding_Federal_TitleI: total federal funding for Title I ($)
+Funding_Federal_SpecialEd: total federal funding for Special Education ($)
+Funding_Federal_ChildNutrition: total federal funding for Child Nutrition programs ($)
+Funding_Federal_Vocational: total federal funding for Vocational training ($)
+Funding_Federal_Other: total federal funding for other purposes ($)
+State Population: population of the state
+Enrollment: total number of students enrolled in the public school system
+Funding_TotalperStudent: Funding_Total/Enrollment ($ per student)
+Funding_FederalperStudent: Funding_Federal/Enrollment ($ per student)
+Funding_StateperStudent: Funding_State/Enrollment ($ per student)
+Funding_LocalperStudent: Funding_Local/Enrollment ($ per student)
+cat1_18to24: % of population 18-24 with less than high school graduate level of educational attainment
+cat2_18to24: % of population 18-24 with high school graduate level of educational attainment
+cat3_18to24: % of population 18-24 with some college / associate's degree level of educational attainment
+cat4_18to24: % of population 18-24 with bachelor's degree or higher level of educational attainment
+cat1_25: % of population 25+ with less than high school graduate level of educational attainment
+cat2_25: % of population 25+ with high school graduate level of educational attainment
+cat3_25: % of population 25+ with some college / associate's degree level of educational attainment
+cat4_25: % of population 25+ with bachelor's degree or higher level of educational attainment
+income: median family income, 2020 ($)
