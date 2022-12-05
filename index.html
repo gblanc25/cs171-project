@@ -103,7 +103,7 @@
 					<p style="border-left: solid" id="outcome_2" hidden><b>Compare the trends of federal, state, and local funding per student.</b> Only the local funding displays a clear positive correlation, suggesting that pursuing a Bachelor's degree is influenced most by funding at the local level.</p>
 				</div>
 				<button onclick="advance()" type="button" id="outcome_next" class="btn btn-outline-primary" style="margin: 1%">Next</button>
-				<div class="row" id="outcome_checks" style="margin-left: 5%; margin-right: 5%; margin-top: 2%" hidden>
+				<div class="row checks" id="outcome_checks" hidden>
 					<div style="text-align: center; background-color: white; border: 1px dotted">
 						<input onclick="outcomes.wrangleData()" type="checkbox" id="federal_check" name="federal" style="accent-color: #58776c; outline: black">
 						<label for="federal" style="padding-right: 5%">Federal Funding Per Student</label>
@@ -161,7 +161,7 @@
 								</div>
 							</div>
 							<div class="col-4" style="position: relative">
-								<img class="text-center" style="width: 30%; position:absolute; bottom:0; margin-left: auto; margin-right: auto; left: 0; right: 0" src="img/clock.png" id="clock">
+								<img class="text-center clock" src="img/clock.png" id="clock">
 							</div>
 							<div class="col-4" style="text-align: right">
 								<!-- Button trigger modal -->
